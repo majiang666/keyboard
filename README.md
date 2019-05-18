@@ -1,4 +1,4 @@
-# `react h5 自定义键盘（省、数字、大写字母键盘）`
+# react h5 自定义键盘（省、数字、大写字母键盘）
 
 ![动画](https://github.com/majiang666/keyboard/blob/master/key.gif)
 ### 1：clone项目
