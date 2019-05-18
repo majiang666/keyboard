@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/> 
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">     
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,viewport-fit=cover" />
+    <title>h5自定义键盘</title>
+    <script>
+      /**
+       * 初始化rem
+       * 
+       * */
+      (function(win) {
+        var doc = win.document;
+        var docEl = doc.documentElement;
+        var tid;
+
+        function refreshRem() {
+          var width = docEl.getBoundingClientRect().width;
+          if(width > 540) { // 最大宽度
+            width = 540;
+          }
+          var rem = width / 3.75;
+          docEl.style.fontSize = rem + 'px';
+        }
+
+        win.addEventListener('resize', function() {
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 300);
+        }, false);
+        win.addEventListener('pageshow', function(e) {
+          if(e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+          }
+        }, false);
+        refreshRem();
+      })(window);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
