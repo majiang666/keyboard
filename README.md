@@ -1,5 +1,6 @@
 # react h5 自定义键盘（省、数字、大写字母键盘）
-原文：https://www.love85g.com/?p=1777
+## 原文：https://www.love85g.com/?p=1777
+
 ![动画](https://github.com/majiang666/keyboard/blob/master/key.gif)
 
 ## 演示
